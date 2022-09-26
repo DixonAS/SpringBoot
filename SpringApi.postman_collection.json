@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "5cb9a65b-6b0c-408f-bb06-f1b45e231319",
+		"name": "SpringApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21462909"
+	},
+	"item": [
+		{
+			"name": "1.-Registrar",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"holamundo\",\r\n    \"roles\" :[\"admin\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/auth/registrar/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"auth",
+						"registrar",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.-IniciarSession",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE2NjQyMTU2NzksImV4cCI6MTY2NDMwMjA3OX0.4fFrn1sJP17cwwy2LZv_hER8CD15bfH-iS_hiCuzxkI54YwG92ees1u5GZjpslu8-bNuibxaVDi97krj5J1Mng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"holamundo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/auth/iniciar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"auth",
+						"iniciar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.-GetClientes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE2NjQyMTM3NDMsImV4cCI6MTY2NDMwMDE0M30.LnxjYQBquN6GS3yUoG2UD-EtdlAQWUpfVx2TbdsNY5DvDiQjvKjwZxXt3U6XqJP_H36DrAxGkNmCFZ7JbC6VTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/clients/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"clients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.-InsertarCliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE2NjQyMDQyNTksImV4cCI6MTY2NDI5MDY1OX0.jGEuCLKXCJZ2_YJkpB2Yb0M4lnrB3H0bRx_a4--wAz4a0ISl5dXrJ2x05xZD7fKcacAjN1j_gUlZm607aclFfQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rut\":\"1-19\",\r\n    \"nombre\":\"test\",\r\n    \"email\":\"test@test.com\",\r\n    \"telefono\":\"test\",\r\n     \"direccion\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/clients/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"clients",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5.-UpdateCliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE2NjQyMTM3NDMsImV4cCI6MTY2NDMwMDE0M30.LnxjYQBquN6GS3yUoG2UD-EtdlAQWUpfVx2TbdsNY5DvDiQjvKjwZxXt3U6XqJP_H36DrAxGkNmCFZ7JbC6VTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"6331bf1d329dfe21f21e59f7\",\r\n    \"nombre\":\"hola test\",\r\n    \"apellido\":\"mmmm\",\r\n    \"telefono\":\"testupdate\",\r\n    \"direccion\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/clients/client/rut=1-19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"clients",
+						"client",
+						"rut=1-19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6.-DeleteCliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE2NjQyMDQyNTksImV4cCI6MTY2NDI5MDY1OX0.jGEuCLKXCJZ2_YJkpB2Yb0M4lnrB3H0bRx_a4--wAz4a0ISl5dXrJ2x05xZD7fKcacAjN1j_gUlZm607aclFfQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rut\":\"1-19\",\r\n    \"nombre\":\"test\",\r\n    \"email\":\"test@test.com\",\r\n    \"telefono\":\"test\",\r\n     \"direccion\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/clients/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"clients",
+						"client"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

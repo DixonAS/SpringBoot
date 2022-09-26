@@ -5,25 +5,21 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.Setter;
+import lombok.NonNull;
 
 
-@Document(value = "Cliente")
 @Getter
 @Setter
-@NoArgsConstructor
+@Document(value = "Cliente")
 
 public class Clientes {
 
     @Id
 	private String _id;
-
+     
     @Indexed(unique = true)
     private String rut;    
     @NonNull
@@ -32,13 +28,24 @@ public class Clientes {
     @NonNull
     private String apellido;
 
-    @NotBlank
-    @Size(max = 50)
     @Email
     @Indexed(unique = true) 
     private String email;
     
     private String telefono;
     private String direccion;
-    
+   
+    public Clientes() {
+
+    }
+
+    public Clientes(String rut, String nombre,String apellido,String email,String telefono, String direccion) {
+        this.rut = rut;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.telefono = telefono;
+        this.direccion = direccion;        
+    }
+
 }

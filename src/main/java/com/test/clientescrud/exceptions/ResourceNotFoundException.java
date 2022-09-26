@@ -22,5 +22,9 @@ public class ResourceNotFoundException extends RuntimeException {
 		this.nombreDelCampo = nombreDelCampo;
 		this.valorDelCampo = valorDelCampo;
 	}
+
+	public ResourceNotFoundException(String message){
+        super(message);
+    }
     
 }

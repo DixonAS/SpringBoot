@@ -83,26 +83,26 @@ public class AuthenticationController {
 
 		if (strRoles == null) {
 			Role userRole = rolRepo.findByName(ERole.ROLE_USER)
-					.orElseThrow(() -> new RuntimeException("Error: Rol no Encontrado."));
+					.orElseThrow(() -> new RuntimeException("Error: Rol no Encontrado Vacio"));
 			roles.add(userRole);
 		} else {
 			strRoles.forEach(role -> {
 				switch (role) {
 				case "admin":
 					Role adminRole = rolRepo.findByName(ERole.ROLE_ADMIN)
-							.orElseThrow(() -> new RuntimeException("Error: Rol no Encontrado."));
+							.orElseThrow(() -> new RuntimeException("Error: Rol no Encontrado. A"));
 					roles.add(adminRole);
 
 					break;
 				case "mod":
 					Role modRole = rolRepo.findByName(ERole.ROLE_MODERATOR)
-							.orElseThrow(() -> new RuntimeException("Error: Rol no Encontrado."));
+							.orElseThrow(() -> new RuntimeException("Error: Rol no Encontrado. M"));
 					roles.add(modRole);
 
 					break;
 				default:
 					Role userRole = rolRepo.findByName(ERole.ROLE_USER)
-							.orElseThrow(() -> new RuntimeException("Error: Rol no Encontrado."));
+							.orElseThrow(() -> new RuntimeException("Error: Rol no Encontrado. U"));
 					roles.add(userRole);
 				}
 			});
