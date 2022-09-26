@@ -4,10 +4,15 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
+
 
 @Document(value = "Cliente")
 @Getter
@@ -27,7 +32,10 @@ public class Clientes {
     @NonNull
     private String apellido;
 
-    @Indexed(unique = true)
+    @NotBlank
+    @Size(max = 50)
+    @Email
+    @Indexed(unique = true) 
     private String email;
     
     private String telefono;
